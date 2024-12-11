@@ -1,4 +1,4 @@
-package com.example.manager.services;
+package com.example.catalogue_service.services;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -6,8 +6,8 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.example.manager.entities.Product;
-import com.example.manager.repositories.ProductRepository;
+import com.example.catalogue_service.entities.Product;
+import com.example.catalogue_service.repositories.ProductRepository;
 
 import lombok.RequiredArgsConstructor;
 

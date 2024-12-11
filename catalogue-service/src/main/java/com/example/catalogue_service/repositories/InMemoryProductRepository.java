@@ -1,4 +1,4 @@
-package com.example.manager.repositories;
+package com.example.catalogue_service.repositories;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -10,7 +10,9 @@ import java.util.stream.IntStream;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.manager.entities.Product;
+import com.example.catalogue_service.entities.Product;
+
+
 
 @Repository
 public class InMemoryProductRepository implements ProductRepository{

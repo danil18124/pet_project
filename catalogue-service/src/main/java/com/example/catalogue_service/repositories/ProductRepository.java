@@ -1,9 +1,9 @@
-package com.example.manager.repositories;
+package com.example.catalogue_service.repositories;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.example.manager.entities.Product;
+import com.example.catalogue_service.entities.Product;
 
 public interface ProductRepository {
 
