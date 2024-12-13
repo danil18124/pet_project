@@ -28,18 +28,18 @@ public class ProductsController {
 	
 	@GetMapping("create")
 	public String getNewProductPage() {
-		return "catalogue/products/new_product";
+		return "catalogue/products/create";
 	}
 	
 	@PostMapping("create")
 	public String createProduct(@ModelAttribute NewProductPayload productPayload, Model model) {
 		try {
 			Product product = this.productRestClient.createProduct(productPayload.title(), productPayload.details());
-			return "redirect:/catalogue/products/%/d".formatted(product.id());
+			return "redirect:/catalogue/products/%d".formatted(product.id());
 		} catch (BadRequestException exception) {
 			model.addAttribute("payload", productPayload);
             model.addAttribute("errors", exception.getErrors());
-            return "catalogue/products/new_product";
+            return "catalogue/products/create";
 		}
 		
 	}
