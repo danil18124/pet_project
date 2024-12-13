@@ -38,7 +38,7 @@ public class ProductRestController {
 	@ModelAttribute("product")
 	public Product product(@PathVariable("productId") int productId) {
 		return this.productService.findProduct(productId)
-				.orElseThrow(() -> new NoSuchElementException("catalogue.errors….."));
+				.orElseThrow(() -> new NoSuchElementException("catalogue.errors.product.not_found"));
 	}
 
 	@GetMapping
@@ -47,9 +47,8 @@ public class ProductRestController {
 	}
 
 	@PatchMapping
-	public ResponseEntity<?> updateProduct(@PathVariable("productId") int productId,
-			@Valid @RequestBody UpdateProductPayload payload, BindingResult bindingResult, Locale locale)
-			throws BindException {
+	public ResponseEntity<Void> updateProduct(@PathVariable("productId") int productId,
+			@Valid @RequestBody UpdateProductPayload payload, BindingResult bindingResult) throws BindException {
 		if (bindingResult.hasErrors()) {
 			if (bindingResult instanceof BindException exception) {
 				throw exception;
@@ -60,8 +59,8 @@ public class ProductRestController {
 			this.productService.updateProduct(productId, payload.title(), payload.details());
 			return ResponseEntity.noContent().build();
 		}
-
 	}
+
 	
 	
 	@DeleteMapping 
