@@ -8,7 +8,7 @@ import com.example.catalogue_service.entities.Product;
 
 public interface ProductService {
 
-	List<Product> findAllProducts();
+	Iterable<Product> findAllProducts(String filter);
 
 	Product createProduct(String title, String details);
 
