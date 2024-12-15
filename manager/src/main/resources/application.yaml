@@ -1,7 +1,13 @@
 pet:
   services:
     catalogue:
-      uri: http://localhost:8080
+      uri: http://localhost:8081
+      username: catalogue_service_user
+      password: password
 spring:
    application:
       name: manager
+   datasource:
+      url: jdbc:postgresql://localhost:5433/manager
+      username: manager
+      password: manager
